@@ -5,7 +5,7 @@ adc = machine.ADC(27)
 sf = 4095/65535 # Scale factor
 volt_per_adc = (3.3 / 4095)
 
-"""while True: 
+while True: 
     time.sleep(2)
     millivolts = adc.read_u16()
 
@@ -21,4 +21,4 @@ volt_per_adc = (3.3 / 4095)
 
     temp = shift / (dy / dx)
     print(temp)
-    time.sleep(1)"""
+    time.sleep(1)
