@@ -14,3 +14,4 @@ AIO_KEY = "aio_UpHG73p68JmtGIoP4GY9OuKvZ6Wl"
 AIO_CLIENT_ID = ubinascii.hexlify(machine.unique_id())  # Can be anything
 AIO_LIGHTS_FEED = "yamsab/feeds/picow-lights"
 AIO_RANDOMS_FEED = "yamsab/feeds/picow-randoms"
+AIO_TEMP_FEED = "yamsab/feeds/picow"
