@@ -2,7 +2,7 @@ import lib
 import lib.wifiConnection
 
 
-def http_get(url = 'http://detectportal.firefox.com/'):
+"""def http_get(url = 'http://detectportal.firefox.com/'):
     import socket                           # Used by HTML get request
     import time                             # Used for delay
     _, _, host, path = url.split('/', 3)    # Separate URL request
@@ -15,18 +15,18 @@ def http_get(url = 'http://detectportal.firefox.com/'):
     rec_bytes = s.recv(10000)               # Receve response
     print(rec_bytes)                        # Print the response
     s.close()                               # Close connection
-
+"""
 # WiFi Connection
 try:
     ip = lib.wifiConnection.connect()
 except KeyboardInterrupt:
     print("Keyboard interrupt")
 
-# HTTP request
+"""# HTTP request
 try:
     http_get()
 except (Exception, KeyboardInterrupt) as err:
-    print("No Internet", err)
+    print("No Internet", err)"""
 
 # WiFi Disconnect
 # wifiConnection.disconnect().
