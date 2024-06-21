@@ -63,7 +63,7 @@ def lightstemp(temp):
         redLight.value(1)
         yellowLight.value(0)
         blueLight.value(0)
-    elif temp > 0:
+    elif temp < 0:
         yellowLight.value(1)
         redLight.value(0)
         blueLight.value(0)
