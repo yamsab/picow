@@ -1,5 +1,7 @@
 import lib
 import lib.wifiConnection
+import main
+
 
 
 """def http_get(url = 'http://detectportal.firefox.com/'):
@@ -19,6 +21,8 @@ import lib.wifiConnection
 # WiFi Connection
 try:
     ip = lib.wifiConnection.connect()
+    #main.main
+
 except KeyboardInterrupt:
     print("Keyboard interrupt")
 
