@@ -15,3 +15,4 @@ AIO_CLIENT_ID = ubinascii.hexlify(machine.unique_id())  # Can be anything
 AIO_LIGHTS_FEED = "yamsab/feeds/picow-lights"
 AIO_humidity_FEED = "yamsab/feeds/humidity"
 AIO_TEMP_FEED = "yamsab/feeds/picow"
+AIO_MAGNET_FEED = "yamsab/feeds/magnet-sonsor"

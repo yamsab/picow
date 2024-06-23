@@ -1,4 +1,5 @@
 import time
+import gc
 from machine import ADC, unique_id, Pin
 import ubinascii
 from lib.umqtt_simple import MQTTClient
@@ -9,11 +10,13 @@ import dht
 redLight = Pin(2, Pin.OUT)
 yellowLight = Pin(3, Pin.OUT)
 blueLight = Pin(4, Pin.OUT)
+whitelight = Pin(5, Pin.OUT)
 
 
 # Initialize ADC
 #adc = ADC(27)
 dht_sensor = dht.DHT11(Pin(27))
+magnetSensor = Pin(26, mode=Pin.IN)
 
 #adc = machine.ADC(27)
 sf = 4095/65535 # Scale factor
@@ -34,6 +37,7 @@ def publish_data(client, feed, data):
 # Read temperature from the DHT11 sensor
 def read_temperature_and_humidity():
     try:
+        print(magnetSensor)
         dht_sensor.measure()
         temp = dht_sensor.temperature()
         humidity = dht_sensor.humidity()
@@ -43,10 +47,24 @@ def read_temperature_and_humidity():
         print('Failed to read from DHT sensor:', e)
         return None, None
 
+def readMagnet():
+    try:
+        value = magnetSensor.value()
+        print(f"Magnet Sensor Value : {value}")
+        if value is not 0:
+            whitelight.value(1)
+        else:
+            whitelight.value(0)
+        return value
+    except Exception as e:
+        print("Failed to print the data from magnet sensor")
+        return None
 
 # Main function
 def main():
     client = MQTTClient(keys.AIO_CLIENT_ID, keys.AIO_SERVER, keys.AIO_PORT, keys.AIO_USER, keys.AIO_KEY)
+    client.connect()
+    print('Connected to MQTT broker')
     
     while True:
         temp, humidity = read_temperature_and_humidity()
@@ -54,7 +72,13 @@ def main():
             lightstemp(temp)
             publish_data(client, keys.AIO_TEMP_FEED, temp)
             publish_data(client, keys.AIO_humidity_FEED, humidity)
+
+        magnet_value = readMagnet()
+        if magnet_value is not 0:
+            publish_data(client, keys.AIO_MAGNET_FEED, magnet_value)
+
         time.sleep(10)  # Publish data every 10 seconds
+        gc.collect()
 
 # Lights for the temperature
 def lightstemp(temp):
