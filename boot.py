@@ -5,11 +5,12 @@ import main
 # WiFi Connection
 try:
     ip = lib.wifiConnection.connect()
-    #main.main
+    print(f"Connected to WiFi, IP: {ip}")
+
+    # Start the main script
+    main.main()
 
 except KeyboardInterrupt:
     print("Keyboard interrupt")
-
-
-# WiFi Disconnect
-# wifiConnection.disconnect().
+except Exception as e:
+    print(f"Failed to connect to WiFi or run the main script: {e}")
