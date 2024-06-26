@@ -2,11 +2,13 @@ Temperature, Humidity and Magnetic Sensor Tutorial
 
 Author
 Yama Sabit (ys222fh)
-Project Overview
+
+## Project Overview
 
 This project involves creating a temperature, humidity and magnetic  sensor using a Raspberry Pi PicoW, a DHT11 sensor, TLV49645 sensor and an MQTT broker to publish the data to Adafruit IO. The estimated time to complete this project is approximately 4-6 hours.
 Objective
-Why This Project?
+
+## Why This Project?
 
 I chose to build this temperature, humidity, and magnetic sensor (TLV49645) using the starter kit I had available to monitor environmental conditions in real-time. This data can be useful for various applications such as home automation, weather monitoring, and checking for magnetic fields in agricultural purposes.
 
@@ -16,7 +18,7 @@ Insights:
 
 This project will provide insights into the environmental conditions of a specific area, helping to understand trends and make informed decisions based on the data collected.
 
-##Materials
+## Materials
 List of Materials
 
 Purchased from Electrokit Sweden AB as part of a startup kit:
@@ -45,7 +47,7 @@ Specifications and Costs
     Breadboard: For prototyping.
     Power Supply: 5V USB power source.
 
-##Computer Setup
+## Computer Setup
 For the first-time connection, hold the BOOTSEL button on the Pico board while connecting it to your computer via USB. The Pico will appear as a USB drive. Drag and drop the MicroPython firmware file onto this drive, then restart the Pico.
 
 Next, connect the Pico to your PC via USB. Install Visual Studio Code (VS Code) and add the Pymakr extension. From the left sidebar in VS Code, click on the device icon to connect to your Pico.
@@ -74,12 +76,12 @@ Required Installations
     Drivers:
         Ensure USB drivers for the Pico are installed.
 
-##Putting Everything Together
+## Putting Everything Together
 While putting everything together, you should read the pinout diagram of the Raspberry Pi Pico, which can be found online at the following link: [Raspberry Pi Pico Pinout](https://datasheets.raspberrypi.com/pico/Pico-R3-A4-Pinout.pdf).
 
 Additionally, familiarize yourself with resistor color coding and read the information about the sensors to ensure correct connections.
 
-##Circuit Diagram
+## Circuit Diagram
 ![Circuit Diagram](./lib/Circuit_Diagram.png)
 
 Electrical Connections
@@ -89,7 +91,7 @@ Electrical Connections
     Connect LEDs to GPIO2 (Red), GPIO3 (Yellow), GPIO4 (Blue), and GPIO5 (White).
 
 
-##Platform Choice
+## Platform Choice
 
 I chose Adafruit IO for its ease of use and integration with MQTT. It offers a free tier that is sufficient for small-scale projects and allows easy scaling if needed.
 Platform Details
@@ -97,7 +99,7 @@ Platform Details
     Functionality: Real-time data monitoring and visualization.
     Cost: Free tier available with options to upgrade.
 
-##The Code
+## The Code
 Core Functions
 
 python
@@ -221,7 +223,7 @@ Data Transmission
         Wireless: WiFi
         Transport: MQTT
 
-##Design Choices
+## Design Choices
 
 Choosing WiFi and MQTT ensures reliable data transmission over the internet and is suitable for real-time applications.
 Presenting the Data
@@ -231,7 +233,7 @@ Data is visualized on Adafruit IO with customizable dashboards. Data is preserve
 
 ![Visual Example](./lib/Data_Visual.png)
 
-##Finalizing the Design
+## Finalizing the Design
 Final Results
 ![Final Result](./lib/Final.jpg)
 ![Final Result](./lib/Final2.jpg)
@@ -241,4 +243,4 @@ Final Thoughts
 
 The project was successful and can be extended with additional sensors or functionality. Future improvements could include adding a web interface for easier monitoring and control.
 
-Note(For security reason Adafruit IO Key has been chenged due to public view in github)
+Note(For security reason Adafruit IO Key has been chenged due to public view in github.)
