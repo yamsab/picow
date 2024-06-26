@@ -221,7 +221,7 @@ Data Transmission
         Wireless: WiFi
         Transport: MQTT
 
-Design Choices
+##Design Choices
 
 Choosing WiFi and MQTT ensures reliable data transmission over the internet and is suitable for real-time applications.
 Presenting the Data
@@ -231,7 +231,7 @@ Data is visualized on Adafruit IO with customizable dashboards. Data is preserve
 
 ![Visual Example](./lib/Data_Visual.png)
 
-Finalizing the Design
+##Finalizing the Design
 Final Results
 ![Final Result](./lib/Final.jpg)
 ![Final Result](./lib/Final2.jpg)
@@ -240,3 +240,5 @@ The project successfully monitors and publishes temperature and humidity data. T
 Final Thoughts
 
 The project was successful and can be extended with additional sensors or functionality. Future improvements could include adding a web interface for easier monitoring and control.
+
+Note(For security reason Adafruit IO Key has been chenged due to public view in github)
