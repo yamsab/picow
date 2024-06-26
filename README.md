@@ -1,4 +1,4 @@
-Temperature, Humidity and Magnetic Sensor Tutorial
+## Temperature, Humidity and Magnetic Sensor Tutorial
 
 Author
 Yama Sabit (ys222fh)
